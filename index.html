@@ -1,81 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zeng Yu – Cybersecurity Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
-  </head>
-  <body class="bg-[#0f172a] text-white font-sans">
-    <!-- Profile -->
-    <section class="text-center py-12 px-4">
-      <img
-        src="assets/ironman.png"
-        alt="Iron Man"
-        class="w-24 h-24 rounded-full border-4 border-blue-400 mx-auto shadow-lg"
-      />
-      <h1 class="text-4xl font-bold mt-4 text-blue-400">Zeng Yu</h1>
-      <p class="text-gray-300 mt-2">
-        Cybersecurity Enthusiast • Python Developer • OSCP in Progress
-      </p>
-    </section>
+""import React, { useState, useEffect } from 'react';
+import { Sun, Moon } from 'lucide-react';
 
-    <!-- Navigation -->
-    <nav class="flex justify-center space-x-8 text-lg text-gray-300 pb-8">
-      <a href="#projects" class="hover:text-white transition">Projects</a>
-      <a href="#writeups" class="hover:text-white transition">Writeups</a>
-      <a href="#certificates" class="hover:text-white transition">Certificates</a>
-    </nav>
+export default function Home() {
+  const [darkMode, setDarkMode] = useState(true);
 
-    <!-- Projects -->
-    <section id="projects" class="max-w-xl mx-auto px-6 pb-12">
-      <h2 class="text-2xl font-semibold mb-4 border-b border-gray-600 pb-2">🚀 Projects</h2>
-      <ul class="space-y-4 text-lg text-gray-200">
-        <li>
-          🧑‍💻 <strong>SCYTHE</strong> – Yara Signature Crafter
-          <span class="text-sm text-gray-400">(BlackHat Asia 2022)</span>
-        </li>
-        <li>
-          🔴 <strong>IoT Honeypot Environment</strong>
-        </li>
-        <li>
-          ⚙️ <strong>Multi-Juicer Setup Guide</strong> on DigitalOcean
-        </li>
-      </ul>
-    </section>
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', darkMode);
+  }, [darkMode]);
 
-    <!-- Writeups -->
-    <section id="writeups" class="max-w-xl mx-auto px-6 pb-12">
-      <h2 class="text-2xl font-semibold mb-4 border-b border-gray-600 pb-2">📝 Writeups</h2>
-      <ul class="space-y-4 text-lg text-gray-200">
-        <li>📄 CTF Writeups</li>
-      </ul>
-    </section>
+  return (
+    <main className="min-h-screen bg-white dark:bg-[#0b1120] text-black dark:text-white px-4 py-10">
+      {/* Toggle */}
+      <div className="fixed top-5 right-5 z-50">
+        <button
+          onClick={() => setDarkMode(!darkMode)}
+          className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:scale-110 transition"
+          aria-label="Toggle Theme"
+        >
+          {darkMode ? <Sun className="text-yellow-400" /> : <Moon className="text-gray-600" />}
+        </button>
+      </div>
 
-    <!-- Certificates -->
-    <section id="certificates" class="max-w-xl mx-auto px-6 pb-20">
-      <h2 class="text-2xl font-semibold mb-4 border-b border-gray-600 pb-2">📜 Certificates</h2>
-      <ul class="space-y-4 text-lg text-gray-200">
-        <li>📜 OSCP (In Progress)</li>
-      </ul>
-    </section>
+      {/* Content */}
+      <div className="flex flex-col items-center justify-start space-y-6">
+        {/* Profile Picture */}
+        <div className="relative group mt-4">
+          <img
+            src="https://raw.githubusercontent.com/fishtankyu/assets/main/ironman.png"
+            alt="Iron Man"
+            className="w-32 h-32 rounded-full border-4 border-blue-400 shadow-lg transition duration-500 ease-in-out transform group-hover:scale-110 group-hover:rotate-6"
+          />
+        </div>
 
-    <!-- Optional Button -->
-    <-- 
-    <section class="text-center pb-12">
-      <a
-        href="https://buymeacoffee.com/zengyu"
-        target="_blank"
-        class="inline-block bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-2 px-5 rounded-full transition-all duration-300 shadow-lg"
-      >
-        ☕ Buy Me a Coffee
-      </a>
-    </section>
-    -->
-  </body>
-</html>
+        {/* Name and Description */}
+        <h1 className="text-4xl font-bold text-blue-600 dark:text-blue-400">Zeng Yu</h1>
+        <p className="text-center text-gray-700 dark:text-gray-300">
+          Cybersecurity Enthusiast • Python Developer • OSCP in Progress
+        </p>
+
+        {/* Navigation */}
+        <nav className="flex gap-6 text-lg mt-2 sticky top-20 bg-white dark:bg-[#0b1120] z-40 px-4 py-2 rounded-xl shadow-md">
+          <a href="#projects" className="hover:text-blue-500 transition">Projects</a>
+          <a href="#writeups" className="hover:text-blue-500 transition">Writeups</a>
+          <a href="#certificates" className="hover:text-blue-500 transition">Certificates</a>
+        </nav>
+
+        {/* Sections */}
+        <section id="projects" className="w-full max-w-2xl mt-10 scroll-mt-24">
+          <h2 className="text-2xl font-bold mb-2">🚀 Projects</h2>
+          <hr className="border-gray-400 dark:border-gray-700 mb-4" />
+          <ul className="space-y-3">
+            <li>
+              <a
+                href="https://github.com/fishtankyu/scythe-yara-signature-crafter"
+                className="block bg-gray-100 dark:bg-gray-800 p-4 rounded-lg hover:scale-[1.02] hover:shadow-lg transition"
+              >
+                🧑‍💻 <strong>SCYTHE</strong> – Yara Signature Crafter <span className="text-sm text-gray-500">(BlackHat Asia 2022)</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/fishtankyu/iot-honeypot"
+                className="block bg-gray-100 dark:bg-gray-800 p-4 rounded-lg hover:scale-[1.02] hover:shadow-lg transition"
+              >
+                🔴 <strong>IoT Honeypot Environment</strong>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/fishtankyu/multijuicer-digitalocean-setup"
+                className="block bg-gray-100 dark:bg-gray-800 p-4 rounded-lg hover:scale-[1.02] hover:shadow-lg transition"
+              >
+                ⚙️ <strong>Multi-Juicer Setup Guide</strong> on DigitalOcean
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section id="writeups" className="w-full max-w-2xl mt-10 scroll-mt-24">
+          <h2 className="text-2xl font-bold mb-2">📝 Writeups</h2>
+          <hr className="border-gray-400 dark:border-gray-700 mb-4" />
+          <ul className="space-y-3">
+            <li>
+              <a
+                href="https://github.com/fishtankyu/ctf-writeups"
+                className="block bg-gray-100 dark:bg-gray-800 p-4 rounded-lg hover:scale-[1.02] hover:shadow-lg transition"
+              >
+                📄 CTF Writeups
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section id="certificates" className="w-full max-w-2xl mt-10 scroll-mt-24">
+          <h2 className="text-2xl font-bold mb-2">📜 Certificates</h2>
+          <hr className="border-gray-400 dark:border-gray-700 mb-4" />
+          <ul className="space-y-3">
+            <li>
+              <div className="block bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+                📜 OSCP (In Progress)
+              </div>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+  );
+}
