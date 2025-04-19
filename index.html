@@ -1,51 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zeng Yu | Cybersecurity</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zeng Yu | Cybersecurity Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
+  <style>
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in-up { animation: fadeInUp 1s ease-out forwards; }
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .animated-bg {
+      background: linear-gradient(-45deg, #0f172a, #1e293b, #0a192f, #1e3a8a);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+    .typewriter {
+      overflow: hidden;
+      border-right: .15em solid #58a6ff;
+      white-space: nowrap;
+      animation:
+        typing 3s steps(30, end),
+        blink-caret .75s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #58a6ff }
+    }
+  </style>
 </head>
-<body class="bg-gray-900 text-gray-200 font-sans">
+<body class="animated-bg text-gray-200 font-sans min-h-screen">
+  <!-- Navbar -->
+  <nav class="flex items-center justify-between px-6 py-4 bg-black/40 backdrop-blur-sm sticky top-0 z-50">
+    <h1 class="text-2xl font-bold text-blue-300">Zeng Yu</h1>
+    <div class="flex items-center space-x-4">
+      <button id="darkToggle" class="bg-gray-800 hover:bg-gray-700 text-white p-2 rounded">🌙</button>
+    </div>
+  </nav>
 
-  <div class="max-w-4xl mx-auto p-6">
-    <header class="mb-10">
-      <h1 class="text-4xl font-bold text-blue-400">Zeng Yu</h1>
-      <p class="text-lg mt-2">Cybersecurity Enthusiast | Python Lover | OSCP in Progress</p>
+  <div class="max-w-3xl mx-auto p-6 w-full">
+    <!-- Header -->
+    <header class="mb-12 fade-in-up">
+      <h1 class="text-4xl sm:text-5xl font-bold text-blue-400 typewriter">Zeng Yu</h1>
+      <p class="mt-3 text-lg sm:text-xl text-gray-300">Cybersecurity Enthusiast • Python Developer • OSCP in Progress</p>
     </header>
 
-    <section class="mb-10">
+    <!-- Projects -->
+    <section class="mb-10 fade-in-up" style="animation-delay: 0.2s;">
       <h2 class="text-2xl font-semibold text-blue-300 mb-4">🛠 Projects</h2>
-      <ul class="list-disc list-inside space-y-2">
-        <li><a href="https://github.com/your-username/scythe" class="text-blue-400 hover:underline">SCYTHE – Yara Signature Crafter</a></li>
-        <li>WhatsApp Fake News Detection Bot (Coming soon)</li>
+      <ul class="space-y-3">
+        <li>
+          <a href="https://github.com/your-username/scythe" target="_blank"
+             class="block bg-gray-800 hover:bg-gray-700 p-4 rounded-xl transition transform hover:scale-105 shadow">
+            🔍 SCYTHE – Yara Signature Crafter (BlackHat Asia 2022)
+          </a>
+        </li>
+        <li>
+          <div class="block bg-gray-800 p-4 rounded-xl text-gray-400 shadow">
+            🤖 WhatsApp Fake News Detection Bot (Coming soon)
+          </div>
+        </li>
       </ul>
     </section>
 
-    <section class="mb-10">
+    <!-- Writeups -->
+    <section class="mb-10 fade-in-up" style="animation-delay: 0.4s;">
       <h2 class="text-2xl font-semibold text-blue-300 mb-4">✍️ Writeups</h2>
-      <p class="text-gray-400">CTF solutions, malware analysis, vulnerability writeups (Coming soon)</p>
+      <p class="text-gray-400">CTF solutions, malware analysis, vulnerability research (Coming soon)</p>
     </section>
 
-    <section class="mb-10">
+    <!-- Certificates -->
+    <section class="mb-10 fade-in-up" style="animation-delay: 0.6s;">
       <h2 class="text-2xl font-semibold text-blue-300 mb-4">📜 Certificates</h2>
-      <ul class="list-disc list-inside">
+      <ul class="list-disc list-inside text-gray-300">
         <li>EEE Global Merit Award</li>
         <li>OSCP (In Progress)</li>
       </ul>
     </section>
 
-    <!-- ☕ Buy Me a Coffee Section -->
-    <section class="mb-10 text-center">
-      <a href="https://buymeacoffee.com/zengyu" target="_blank" class="inline-block bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-2 px-4 rounded-xl transition-all duration-200 shadow-md">
+    <!-- Buy Me a Coffee -->
+    <section class="text-center fade-in-up" style="animation-delay: 0.8s;">
+      <a href="https://buymeacoffee.com/zengyu" target="_blank"
+         class="inline-block bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-2 px-5 rounded-full transition-all duration-300 shadow-lg">
         ☕ Buy Me a Coffee
       </a>
     </section>
 
-    <footer class="mt-12 border-t border-gray-700 pt-6 text-sm text-gray-400 text-center">
-      <p>Made with ❤️ by Zeng Yu | <a href="https://github.com/your-username" class="text-blue-400 hover:underline">GitHub</a></p>
+    <!-- Footer -->
+    <footer class="mt-16 text-center text-sm text-gray-400 fade-in-up" style="animation-delay: 1s;">
+      <p>Made with ❤️ by Zeng Yu | <a href="https://github.com/fishtankyu" class="text-blue-400 hover:underline">GitHub</a></p>
     </footer>
   </div>
 
+  <script>
+    // Dark mode toggle
+    const toggle = document.getElementById("darkToggle");
+    toggle.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+    });
+  </script>
 </body>
 </html>
