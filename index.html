@@ -6,9 +6,7 @@
   <title>Zeng Yu | Cybersecurity Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = {
-      darkMode: 'class',
-    };
+    tailwind.config = { darkMode: 'class' };
   </script>
   <style>
     @keyframes fadeInUp {
@@ -26,21 +24,13 @@
       background-size: 400% 400%;
       animation: gradient 15s ease infinite;
     }
+    @keyframes typing { from { width: 0 } to { width: 100% } }
+    @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #58a6ff } }
     .typewriter {
       overflow: hidden;
       border-right: .15em solid #58a6ff;
       white-space: nowrap;
-      animation:
-        typing 3s steps(30, end),
-        blink-caret .75s step-end infinite;
-    }
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: #58a6ff }
+      animation: typing 3.5s steps(40, end) forwards, blink-caret .7s infinite;
     }
   </style>
 </head>
@@ -67,7 +57,7 @@
         <li>
           <a href="https://github.com/fishtankyu/scythe" target="_blank"
              class="block bg-gray-800 hover:bg-gray-700 p-4 rounded-xl transition transform hover:scale-105 shadow">
-            🔍 SCYTHE – Yara Signature Crafter (BlackHat Asia 2022)
+            🕵️ SCYTHE – Yara Signature Crafter (BlackHat Asia 2022)
           </a>
         </li>
         <li>
@@ -78,25 +68,30 @@
       </ul>
     </section>
 
-    <!-- Writeups -->
-<section class="mb-12 fade-in-up" style="animation-delay: 0.6s">
-  <h2 class="text-2xl font-semibold text-cyan-300 mb-4">📝 CTF Writeups</h2>
-  <p class="text-gray-400">Solutions and insights from various CTF challenges I've participated in:</p>
-  <ul class="space-y-2 mt-4">
-    <li>
-      <a href="https://github.com/fishtankyu/ctf-writeups" class="block bg-gray-800 hover:bg-gray-700 p-4 rounded-lg shadow-lg transition-all duration-300 hover:scale-105">
-        View CTF Writeups
-      </a>
-    </li>
-  </ul>
-</section>
-
+    <!-- Writeups & Guides -->
+    <section class="mb-10 fade-in-up" style="animation-delay: 0.4s;">
+      <h2 class="text-2xl font-semibold text-blue-300 mb-4">✍️ Writeups & Guides</h2>
+      <p class="text-gray-400">Browse my writeups, tutorials, and setup guides:</p>
+      <ul class="space-y-3 mt-4">
+        <li>
+          <a href="https://github.com/fishtankyu/ctf-writeups" target="_blank"
+             class="block bg-gray-800 hover:bg-gray-700 p-4 rounded-xl transition transform hover:scale-105 shadow">
+            📝 CTF Writeups
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/fishtankyu/multi-juicer" target="_blank"
+             class="block bg-gray-800 hover:bg-gray-700 p-4 rounded-xl transition transform hover:scale-105 shadow">
+            ⚙️ Multi-Juicer Setup Guide on DigitalOcean
+          </a>
+        </li>
+      </ul>
+    </section>
 
     <!-- Certificates -->
     <section class="mb-10 fade-in-up" style="animation-delay: 0.6s;">
       <h2 class="text-2xl font-semibold text-blue-300 mb-4">📜 Certificates</h2>
       <ul class="list-disc list-inside text-gray-300">
-        <li>eJPT (In Progress)</li>
         <li>OSCP (In Progress)</li>
       </ul>
     </section>
@@ -116,9 +111,7 @@
   </div>
 
   <script>
-    // Dark mode toggle
-    const toggle = document.getElementById("darkToggle");
-    toggle.addEventListener("click", () => {
+    document.getElementById("darkToggle").addEventListener("click", () => {
       document.documentElement.classList.toggle("dark");
     });
   </script>
