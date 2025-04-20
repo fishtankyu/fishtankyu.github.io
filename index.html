@@ -1,7 +1,9 @@
-""import React, { useState, useEffect } from 'react';
+// App.jsx
+import React, { useState, useEffect } from 'react';
 import { Sun, Moon } from 'lucide-react';
+import './index.css';
 
-export default function Home() {
+export default function App() {
   const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
@@ -28,7 +30,7 @@ export default function Home() {
           <img
             src="https://raw.githubusercontent.com/fishtankyu/assets/main/ironman.png"
             alt="Iron Man"
-            className="w-32 h-32 rounded-full border-4 border-blue-400 shadow-lg transition duration-500 ease-in-out transform group-hover:scale-110 group-hover:rotate-6"
+            className="w-32 h-32 rounded-full border-4 border-blue-400 shadow-lg transition duration-500 ease-in-out transform group-hover:scale-110 group-hover:rotate-6 group-hover:brightness-110 hover:shadow-2xl"
           />
         </div>
 
@@ -53,6 +55,8 @@ export default function Home() {
             <li>
               <a
                 href="https://github.com/fishtankyu/scythe-yara-signature-crafter"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block bg-gray-100 dark:bg-gray-800 p-4 rounded-lg hover:scale-[1.02] hover:shadow-lg transition"
               >
                 🧑‍💻 <strong>SCYTHE</strong> – Yara Signature Crafter <span className="text-sm text-gray-500">(BlackHat Asia 2022)</span>
@@ -61,6 +65,8 @@ export default function Home() {
             <li>
               <a
                 href="https://github.com/fishtankyu/iot-honeypot"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block bg-gray-100 dark:bg-gray-800 p-4 rounded-lg hover:scale-[1.02] hover:shadow-lg transition"
               >
                 🔴 <strong>IoT Honeypot Environment</strong>
@@ -69,6 +75,8 @@ export default function Home() {
             <li>
               <a
                 href="https://github.com/fishtankyu/multijuicer-digitalocean-setup"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block bg-gray-100 dark:bg-gray-800 p-4 rounded-lg hover:scale-[1.02] hover:shadow-lg transition"
               >
                 ⚙️ <strong>Multi-Juicer Setup Guide</strong> on DigitalOcean
@@ -84,6 +92,8 @@ export default function Home() {
             <li>
               <a
                 href="https://github.com/fishtankyu/ctf-writeups"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block bg-gray-100 dark:bg-gray-800 p-4 rounded-lg hover:scale-[1.02] hover:shadow-lg transition"
               >
                 📄 CTF Writeups
