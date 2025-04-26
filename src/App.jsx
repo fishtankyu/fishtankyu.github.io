@@ -1,37 +1,37 @@
-import { useState } from 'react';
-import './App.css';
-
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="container">
-      <header>
-        <h1>Welcome to My Portfolio</h1>
-        <p>This is a space where I showcase my projects and skills.</p>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
+      <header className="text-center">
+        <h1 className="text-4xl font-bold mb-2">Hi, I'm [Your Name] 👋</h1>
+        <p className="text-lg text-gray-600">I'm a [your role, e.g., Full-Stack Developer]</p>
       </header>
 
-      <section className="projects">
-        <h2>My Projects</h2>
-        <ul>
-          <li>Project 1</li>
-          <li>Project 2</li>
-          <li>Project 3</li>
-        </ul>
-      </section>
-
-      <section className="about">
-        <h2>About Me</h2>
-        <p>
-          I'm a passionate developer with experience in Python, JavaScript, and Cybersecurity. Here are a few things I've worked on.
+      <section className="mt-10">
+        <h2 className="text-2xl font-semibold mb-4">About Me</h2>
+        <p className="text-gray-700 max-w-md">
+          [A short bio about you — e.g., I love building beautiful, fast websites and exploring new tech...]
         </p>
       </section>
 
-      <footer>
-        <p>Made with ❤️ using React and Vite.</p>
+      <section className="mt-10">
+        <h2 className="text-2xl font-semibold mb-4">Projects</h2>
+        <ul className="space-y-4">
+          <li className="bg-white p-4 rounded shadow">
+            <h3 className="text-xl font-bold">Project 1</h3>
+            <p className="text-gray-600">Description of project 1...</p>
+          </li>
+          <li className="bg-white p-4 rounded shadow">
+            <h3 className="text-xl font-bold">Project 2</h3>
+            <p className="text-gray-600">Description of project 2...</p>
+          </li>
+        </ul>
+      </section>
+
+      <footer className="mt-10 text-gray-500">
+        <p>© [Your Name] {new Date().getFullYear()}</p>
       </footer>
     </div>
-  );
+  )
 }
 
 export default App;
