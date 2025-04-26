@@ -5,6 +5,6 @@ export default defineConfig({
   plugins: [react()],
   base: '/',           // your site is at the repo root
   build: {
-    outDir: 'docs'     // <-- tell Vite to write into `docs/` instead of `dist/`
+    outDir: 'docs'     // <-- tell Vite to write the build into `docs/` instead of `dist/`
   }
 })
